@@ -14,7 +14,7 @@ var bio = {
   "skills": [
     "Android Development", "Web Development", "Remote Pilot", "Material Design"
       ],
-  "bioPic": "images/me300.jpg"
+  "biopic": "images/me300.jpg"
 };
 
 //display bio info
@@ -39,25 +39,29 @@ $("#topContacts").append(formattedLoc);
 $("#footerContacts").append(formattedLoc);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedWelcomeMsg);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$("#header").append(formattedBioPic);
+var formattedBiopic = HTMLbiopic.replace("%data%", bio.biopic);
+$("#header").append(formattedBiopic);
 
 //display skills
 
-if(bio.skills.length > 0) {
+// if(bio.skills.length > 0) {
 
-  $("#header").append(HTMLskillsStart);
+//   $("#header").append(HTMLskillsStart);
 
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+//   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+//   $("#skills").append(formattedSkill);
+//   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+//   $("#skills").append(formattedSkill);
+//   formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+//   $("#skills").append(formattedSkill);
+//   formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+//   $("#skills").append(formattedSkill);
+// }
+for(skill in bio.skills) {
   $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-  $("#skills").append(formattedSkill);
+
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
 }
-
 //education
 var education = {
   "schools": [
@@ -65,25 +69,25 @@ var education = {
       "name": "Udacity",
       "location": "New York",
       "degree": "Front End Nanodegree",
-      "major": ["CS", " Web Development"],
-      "dates": 2016,
-      "url": "www.///"
+      "majors": ["CS", " Web Development"],
+      "dates": "2016",
+      "url": "https://www.udacity.com/"
     },
     {
       "name": "FlatIron School",
       "location": "New York",
       "degree": "Intro to Ruby",
-      "major": ["CS", " Web Development"],
-      "dates": 2016,
-      "url": "www.///"
+      "majors": ["CS", " Web Development"],
+      "dates": "2016",
+      "url": "https://flatironschool.com/"
     }
   ],
   "onlineCourses": [
     {
       "title": "JavaScript Syntax",
       "school": "Udacity",
-      "dates": 2016,
-      "url": "www.Udacity.///"
+      "dates": "2016",
+      "url": "https://www.udacity.com/"
     }
   ]
 };
@@ -98,8 +102,8 @@ function displayEducation() {
     $(".education-entry:last").append(formattedLocation);
     var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
     $(".education-entry:last").append(formattedSchoolDates);
-    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-    $(".education-entry:last").append(formattedMajor);
+    var formattedMajors = HTMLschoolMajors.replace("%data%", education.schools[school].majors);
+    $(".education-entry:last").append(formattedMajors);
     var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
     $(".education-entry:last").append(formattedDegree);
     var formattedURL = HTMLonlineURL.replace("%data%", education.schools[school].url);

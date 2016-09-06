@@ -34,7 +34,10 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #484848;
+    text-shadow:
+    1px -1px 0 #000,
+    1px 1px 0 #ffb74d;
   line-height: 29px;
   padding: 10px;
 }
@@ -61,7 +64,9 @@ h5 {
 
 }
 
-
+.contact {
+  margin-bottom: 2em;
+}
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -94,7 +99,7 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 38px;
   color: #f3f3f3;
   line-height: 28px;
 }
@@ -102,6 +107,7 @@ a {
 #skills-h3 {
   color: #f5ae23;
   display: none;
+  padding-top: 2em;
 }
 
 .orange {
@@ -157,20 +163,26 @@ ul {
 }
 
 .biopic {
+  margin: .5em 1.5em 1em 1em;
   float: left;
-  padding: 10px;
+  padding: 0px;
   width: 200px;
   display: none;
 }
 
 img {
-  padding: 10px;
+  margin: .5em .5em 2em .5em;
+  padding: 0px;
   width: 300px;
   height:165px;
 }
 
 span {
   padding: 5px;
+  color: red;
+  text-shadow:
+    1px -1px 0 #000,
+    1px 1px 0 #ffb74d;
 }
 
 #lets-connect {
@@ -220,4 +232,31 @@ span {
   .biopic {
     display: block;
   }
+}
+
+#blanket {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+  max-width: 1080px;
+  border: 1px solid gray;
+  -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+}
+
+#page {
+ background-image: url("../images/wht-bg.jpg");
+    background-repeat: repeat;
+}
+
+.frame {
+  border: 1px solid silver;
+  -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+}
+
+.education-entry, .work-entry {
+  margin-bottom: 2em;
 }

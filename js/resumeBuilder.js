@@ -43,11 +43,8 @@ var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(formattedBioPic);
 
 //display skills
-
 if(bio.skills.length > 0) {
-
   $("#header").append(HTMLskillsStart);
-
   var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
   $("#skills").append(formattedSkill);
   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
@@ -67,7 +64,7 @@ var education = {
       "degree": "Front End Nanodegree",
       "major": ["CS", " Web Development"],
       "dates": 2016,
-      "url": "www.///"
+      "url": "https://www.udacity.com/"
     },
     {
       "name": "FlatIron School",
@@ -75,7 +72,7 @@ var education = {
       "degree": "Intro to Ruby",
       "major": ["CS", " Web Development"],
       "dates": 2016,
-      "url": "www.///"
+      "url": "https://flatironschool.com/"
     }
   ],
   "onlineCourses": [
@@ -83,7 +80,7 @@ var education = {
       "title": "JavaScript Syntax",
       "school": "Udacity",
       "dates": 2016,
-      "url": "www.Udacity.///"
+      "url": "https://www.udacity.com/"
     }
   ]
 };
@@ -136,7 +133,6 @@ var work = {
 // Provide service to multiple projects in urban and rural areas locally or internationally while monitoring and consulting remotely.
 // Service extending to the training of operation, setup and customized fabrication requirements for automated 24/7 monitoring and reporting of network, A/V, vibration, sound and air quality equipment.
 // Provide training, connectivity and consulting for automated monitoring and reporting through wireless equipment including Sierra Wireless cellular and GPS modems.
-
   },
   {
     "employer": "Fiberlink Technologies Inc.",
@@ -217,7 +213,6 @@ displayProjects();
 $(document).click(function(loc) {
   var x = loc.pageX;
   var y = loc.pageY;
-
   logClicks(x,y);
 });
 

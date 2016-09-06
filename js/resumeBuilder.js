@@ -18,36 +18,29 @@ var bio = {
 };
 
 //display bio info
+bio.display = function(){
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+$("#header").prepend(formattedName, formattedRole);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-$("#footerContacts").append(formattedMobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
-$("#footerContacts").append(formattedEmail);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedGithub);
-$("#footerContacts").append(formattedGithub);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedTwitter);
-$("#footerContacts").append(formattedTwitter);
 var formattedLoc = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLoc);
-$("#footerContacts").append(formattedLoc);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(formattedWelcomeMsg);
 var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-$("#header").append(formattedBiopic);
+$("#topContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLoc);
+$("#footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLoc);
+$("#header").append(formattedWelcomeMsg, formattedBiopic);
 
 //display skills
    $("#header").append(HTMLskillsStart);
 bio.skills.forEach(function(skill) {
   var formattedSkill = HTMLskills.replace("%data%", (skill));
     $("#skills").append(formattedSkill);
-});
+  })
+};
+bio.display();
 
 //education
 var education = {
@@ -80,21 +73,17 @@ var education = {
 };
 
 //display education info
+education.display = function(){
 $("#education").append(HTMLschoolStart);
-// function displayEducation() {
   education.schools.forEach(function(school) {
     var formattedName = HTMLschoolName.replace("%data%", school.name);
     var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
-    $(".education-entry:last").append(formattedLocation);
     var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
-    $(".education-entry:last").append(formattedSchoolDates);
     var formattedMajors = HTMLschoolMajors.replace("%data%", school.major);
-    $(".education-entry:last").append(formattedMajors);
     var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
     var formattedCourse = formattedName + formattedDegree;
-    $(".education-entry:last").append(formattedCourse);
     var formattedURL = HTMLonlineURL.replace("%data%", school.url);
-    $(".education-entry:last").append(formattedURL);
+    $(".education-entry:last").append(formattedLocation, formattedSchoolDates, formattedMajors, formattedCourse, formattedURL);
   }),
 
   $("#education").append(HTMLonlineClasses);
@@ -103,13 +92,12 @@ $("#education").append(HTMLschoolStart);
     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", onlineCourses.school);
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", onlineCourses.title);
     var formattedSchoolTitle = formattedOnlineTitle + formattedOnlineSchool;
-    $(".education-entry:last").append(formattedSchoolTitle);
     var formattedOnlineDate = HTMLonlineDates.replace("%data%", onlineCourses.dates);
-    $(".education-entry:last").append(formattedOnlineDate);
     var formattedURL = HTMLonlineURL.replace("%data%", onlineCourses.url);
-    $(".education-entry:last").append(formattedURL);
-});
-// displayEducation();
+    $(".education-entry:last").append(formattedSchoolTitle, formattedOnlineDate, formattedURL);
+  })
+};
+education.display();
 
 //work info
 var work = {
@@ -143,22 +131,19 @@ var work = {
 };
 
 //display work info
-function displayWork() {
+work.display = function(){
   work.jobs.forEach(function(job) {
     $("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerTitle);
     var formattedDates = HTMLworkDates.replace("%data%", job.dates);
-    $(".work-entry:last").append(formattedDates);
     var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
-    $(".work-entry:last").append(formattedLocation);
     var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
-    $(".work-entry:last").append(formattedDescription);
+    $(".work-entry:last").append(formattedEmployerTitle, formattedDates, formattedLocation, formattedDescription);
   })
 };
-displayWork();
+work.display();
 
 //project info
 var projects = {
@@ -185,22 +170,20 @@ var projects = {
 };
 
 //display project info
-function displayProjects() {
+projects.display = function(){
   projects.projects.forEach(function(project) {
     $("#projects").append(HTMLprojectStart);
     var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
-    $(".project-entry:last").append(formattedTitle);
     var formattedProjectDates = HTMLprojectDates.replace("%data%", project.dates);
-    $(".project-entry:last").append(formattedProjectDates);
     var formattedProjectDescription = HTMLprojectDescription.replace("%data%", project.description);
-    $(".project-entry:last").append(formattedProjectDescription);
+    $(".project-entry:last").append(formattedTitle, formattedProjectDates, formattedProjectDescription);
     project.images.forEach(function(img) {
       image = HTMLprojectImage.replace("%data%", img);
+      $(".project-entry:last").append(image);
     });
-    $(".project-entry:last").append(image);
   })
 };
-displayProjects();
+projects.display();
 
 $(document).click(function(loc) {
   var x = loc.pageX;

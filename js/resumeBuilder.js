@@ -54,7 +54,7 @@ var education = {
     "name": "FlatIron School",
     "location": "New York",
     "degree": "Intro to Ruby",
-    "majors": ["CS", "Web Development"],
+    "majors": ["CS", "Web Development, andthisone"],
     "dates": "2016",
     "url": "https://flatironschool.com/"
   }],
@@ -73,7 +73,7 @@ education.display = function() {
     var formattedName = HTMLschoolName.replace("%data%", school.name);
     var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
     var formattedSchoolDates = HTMLschoolDates.replace("%data%", school.dates);
-    var formattedMajors = HTMLschoolMajor.replace("%data%", school.majors);
+    var formattedMajors = HTMLschoolMajor.replace("%data%", school.majors.join(", "));
     var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
     var formattedCourse = formattedName + formattedDegree;
     var formattedURL = HTMLonlineURL.replace("%data%", school.url);

@@ -2,7 +2,7 @@
 Interactive Resumé
 ==========
 
-A webpage used to exercise html, css and bootstrap. The portfolio will showcase accomplishments, demo techniques and evolve through feedback, exploration and creativity. It is in constant experimental condition to test error resolution and find improvement on standard practices. Currently displays a live-updated time-tracking chart, graphs and repository contributions.
+An interactive resume application that reads all data from a JSON file and then using JQuery dynamically modifies the DOM to display the information. The data from the education and employment sections is used with a Google API to automatically "pin" the locations of each on a displayed Google map.
 
 
 [![Build status][shield-build]](#)
